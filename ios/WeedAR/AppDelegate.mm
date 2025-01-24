@@ -21,7 +21,6 @@
   [AppCenterReactNative register];
   [AppCenterReactNativeAnalytics registerWithInitiallyEnabled:true];
   [AppCenterReactNativeCrashes registerWithAutomaticProcessing];
-  [GMSServices provideAPIKey:@"AIzaSyA9jTrpHMYVEhSI4xp7hxlw_sKdLWBViqw"];
 //  [SDImageCodersManager.sharedManager addCoder:SDImageWebPCoder.sharedCoder];
 
   self.moduleName = @"weedar";
