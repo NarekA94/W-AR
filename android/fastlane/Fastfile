@@ -1,0 +1,48 @@
+require 'dotenv'
+Dotenv.load("../../.env.development")
+
+default_platform(:android)
+
+desc "Build and deploy on Firebase App Distribution"
+  lane :firebase_upload do |options|
+    environment = options[:env]
+    sh "yarn android:cc"
+
+    increment_version_code
+
+    case environment
+    when "dev"
+      sh "yarn android:aab-dev"
+    when "stage"
+      sh "yarn android:aab-stage"
+    when "prod"
+      sh "yarn android:aab-prod"
+    else
+      UI.user_error!("You must specify a valid environment with env:dev, env:stage, or env:prod")
+    end
+
+  current_branch = sh("git rev-parse --abbrev-ref HEAD")
+  author_email = sh("git log -1 --pretty=format:'%ae'")
+    firebase_app_distribution(
+        app: ENV["FIREBASE_APP_ID"], 
+        groups: "android-testers",
+        release_notes: "Author: #{author_email}\nGitBranch: #{current_branch}\nEnvironment: #{ENV["API_URL"]}",
+        android_artifact_type: 'AAB',
+        firebase_cli_token: ENV['FIREBASE_CLI_TOKEN']
+    )
+    slack(
+          message: "Android App successfully uploaded to Firebase. :white_check_mark:",
+          success: true,
+          slack_url: "https://hooks.slack.com/services/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",
+          default_payloads: [:git_branch, :git_author],
+      )
+  end
+
+  lane :increment_version_code do
+    gradle_file_path = "../app/build.gradle"
+    gradle_file = File.read(gradle_file_path)
+    new_version_code = gradle_file.match(/versionCode (\d+)/)[1].to_i + 1
+    updated_file = gradle_file.gsub(/versionCode (\d+)/, "versionCode #{new_version_code}")
+    File.open(gradle_file_path, "w") { |file| file.puts updated_file }
+    puts "Updated versionCode to #{new_version_code}"
+  end

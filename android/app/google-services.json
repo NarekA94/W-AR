@@ -1,0 +1,315 @@
+{
+  "project_info": {
+    "project_number": "1055278210758",
+    "firebase_url": "https://ar-dispensary-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "ar-dispensary",
+    "storage_bucket": "ar-dispensary.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1055278210758:android:0d110324ad5abdca6841c7",
+        "android_client_info": {
+          "package_name": "com.engenious.ar"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1055278210758-9uc6hcq8s3kvo839tselnst5q17tehpd.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.engenious.ar",
+            "certificate_hash": "833828026dc2dd7a8ea3dead1b3e5275bbbe9d07"
+          }
+        },
+        {
+          "client_id": "1055278210758-gaa845hl85eh1gn8rcql5ihr769nhths.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCUJyLrsrE45uImcfDI0n-WDkuwStVz_CM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1055278210758-gaa845hl85eh1gn8rcql5ihr769nhths.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1055278210758-0mp2k843agb9a50gq4b0a5ggu5esqgqr.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.weedar.dev"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1055278210758:android:5661d82f39a220b86841c7",
+        "android_client_info": {
+          "package_name": "com.example.weedar"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1055278210758-2iv26suv0c9j47ch5gj642642js3h4sk.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.weedar",
+            "certificate_hash": "7a62e0d7e3eef494b120d7996da1f2f664325fd4"
+          }
+        },
+        {
+          "client_id": "1055278210758-dk0kc65task1qbh77r2smt59stkds47p.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.weedar",
+            "certificate_hash": "b61dd60e8908091d67b2866f126419958b0db154"
+          }
+        },
+        {
+          "client_id": "1055278210758-ov1figchb84290ak5vr9om2ie9gghacp.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.weedar",
+            "certificate_hash": "f94eaf8652b07b0883d2a1d1f8606d50f3f3841b"
+          }
+        },
+        {
+          "client_id": "1055278210758-gaa845hl85eh1gn8rcql5ihr769nhths.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCUJyLrsrE45uImcfDI0n-WDkuwStVz_CM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1055278210758-gaa845hl85eh1gn8rcql5ihr769nhths.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1055278210758-0mp2k843agb9a50gq4b0a5ggu5esqgqr.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.weedar.dev"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1055278210758:android:257e23426a56842a6841c7",
+        "android_client_info": {
+          "package_name": "com.weedar"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1055278210758-b9amqjpd4j3qppung5753hkkblepsllv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.weedar",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "1055278210758-gaa845hl85eh1gn8rcql5ihr769nhths.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCUJyLrsrE45uImcfDI0n-WDkuwStVz_CM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1055278210758-gaa845hl85eh1gn8rcql5ihr769nhths.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1055278210758-0mp2k843agb9a50gq4b0a5ggu5esqgqr.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.weedar.dev"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1055278210758:android:e368a389e8960f8f6841c7",
+        "android_client_info": {
+          "package_name": "com.weedar.beta.ar"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1055278210758-t2rn08on9ptibki1ua0ofuplod7i9i3d.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.weedar.beta.ar",
+            "certificate_hash": "5dd16eca7fd504e3ba0275447ae3f5b95eadec4a"
+          }
+        },
+        {
+          "client_id": "1055278210758-u9mtfgp0tbgfqvo8tm1vp9b2nngd2mrm.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.weedar.beta.ar",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "1055278210758-gaa845hl85eh1gn8rcql5ihr769nhths.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCUJyLrsrE45uImcfDI0n-WDkuwStVz_CM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1055278210758-gaa845hl85eh1gn8rcql5ihr769nhths.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1055278210758-0mp2k843agb9a50gq4b0a5ggu5esqgqr.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.weedar.dev"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1055278210758:android:6edc98fe3e7c48386841c7",
+        "android_client_info": {
+          "package_name": "io.weedar.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1055278210758-17u9a0m4lfbrjti88m9s50japbjc7u4o.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "io.weedar.app",
+            "certificate_hash": "698c87cfdef4d5492dbc855dde191399c5245ff8"
+          }
+        },
+        {
+          "client_id": "1055278210758-epnca02ka4qsq8eu64hbrjv4e8hsjq67.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "io.weedar.app",
+            "certificate_hash": "f94eaf8652b07b0883d2a1d1f8606d50f3f3841b"
+          }
+        },
+        {
+          "client_id": "1055278210758-jukpsd5hloopiubdlit84j821qsd1lec.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "io.weedar.app",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "1055278210758-kt96j2h5ghvacr6fu1pretacge26u5ak.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "io.weedar.app",
+            "certificate_hash": "3394df618bdc4ff150e0ecef919d1a5a5f3ed682"
+          }
+        },
+        {
+          "client_id": "1055278210758-gaa845hl85eh1gn8rcql5ihr769nhths.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCUJyLrsrE45uImcfDI0n-WDkuwStVz_CM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1055278210758-gaa845hl85eh1gn8rcql5ihr769nhths.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1055278210758-0mp2k843agb9a50gq4b0a5ggu5esqgqr.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.weedar.dev"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1055278210758:android:61010b26b5520ec76841c7",
+        "android_client_info": {
+          "package_name": "io.weedar.kushstock"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1055278210758-gaa845hl85eh1gn8rcql5ihr769nhths.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCUJyLrsrE45uImcfDI0n-WDkuwStVz_CM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1055278210758-gaa845hl85eh1gn8rcql5ihr769nhths.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1055278210758-0mp2k843agb9a50gq4b0a5ggu5esqgqr.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.weedar.dev"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

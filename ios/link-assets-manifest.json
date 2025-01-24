@@ -1,0 +1,65 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "src/assets/fonts/CoreSansC-15Thin.ttf",
+      "sha1": "e8413a16b9deee58a298a31a0c27f6cd3039aa5f"
+    },
+    {
+      "path": "src/assets/fonts/CoreSansC-25ExtraLight.ttf",
+      "sha1": "dd35ab00da05acba16f636e8f8fc834960ceb60d"
+    },
+    {
+      "path": "src/assets/fonts/CoreSansC-35Light.ttf",
+      "sha1": "4dd62df8210880d727a4c477239af9c2a31f3b60"
+    },
+    {
+      "path": "src/assets/fonts/CoreSansC-45Regular.ttf",
+      "sha1": "eed49197f5d10b598189758e0f874e9946d824bb"
+    },
+    {
+      "path": "src/assets/fonts/CoreSansC-55Medium.ttf",
+      "sha1": "6fb46c1fc9c81c18f03cb452aa2271458d5520da"
+    },
+    {
+      "path": "src/assets/fonts/CoreSansC-65Bold.ttf",
+      "sha1": "7f9fa4a4116cc032b762633fb1d4be3bc1fc9fec"
+    },
+    {
+      "path": "src/assets/fonts/CoreSansC-75ExtraBold.ttf",
+      "sha1": "ef7a84888b10ce34f609b696790043e67d562484"
+    },
+    {
+      "path": "src/assets/fonts/CoreSansC-85Heavy.ttf",
+      "sha1": "d5fa4811fc8e7d4f70940b99017bc13e4d3c9164"
+    },
+    {
+      "path": "src/assets/fonts/CoreSansC-95Black.ttf",
+      "sha1": "722991701bde0f935df2529bbce44c8efe3a15fc"
+    },
+    {
+      "path": "src/assets/fonts/DenkOne-Regular.ttf",
+      "sha1": "f84fb5a7d85e33ceb7a9649f6dfe92b2f5945fa6"
+    },
+    {
+      "path": "src/assets/fonts/Oswald-Medium.ttf",
+      "sha1": "b6fc839618be0f67340c1b035d24f8c7feac3d69"
+    },
+    {
+      "path": "src/assets/models/sticker.glb",
+      "sha1": "0970c82766a89b5e04e0cdcb2c6cf037892a5b8d"
+    },
+    {
+      "path": "src/assets/models/sticker_rectangle.glb",
+      "sha1": "1b528f91afe4dd0e9bd9275414123ee1f6a7bd76"
+    },
+    {
+      "path": "src/assets/models/sticker_roundl.glb",
+      "sha1": "40c4656fb43df0a68d39f4239f23bef1fdba5cf6"
+    },
+    {
+      "path": "src/assets/models/weedar.env",
+      "sha1": "db45bcc6d7f6b657827f9f78f6efba6b25fa433f"
+    }
+  ]
+}

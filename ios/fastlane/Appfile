@@ -1,0 +1,5 @@
+app_identifier(ENV['BUNDLE_IDENTIFIER']) # The bundle identifier of your app
+apple_id(ENV['APPLE_ID']) # Your Apple Developer Portal username
+
+itc_team_id("125073314") # App Store Connect Team ID
+team_id("KP728Q64HW") # Developer Portal Team ID

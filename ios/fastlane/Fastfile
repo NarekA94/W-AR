@@ -1,0 +1,176 @@
+require 'dotenv'
+Dotenv.load
+
+default_platform(:ios)
+
+platform :ios do
+  desc "Distribute build to Firebase App Distribution"
+  lane :testflight_upload do |options|
+
+    ENV["FASTLANE_APP_SPECIFIC_PASSWORD"] = ENV["APP_SPECIFIC_PASSWORD"]
+    environment = options[:env]
+    scheme_name = ""
+    env_value = ""
+    api_url_value = ""
+
+    case environment
+    when "dev"
+      scheme_name = "WeedAR(dev)"
+      env_value = "development"
+      api_url_value = "https://api-dev.weedar.tech/"
+    when "stage"
+      scheme_name = "WeedAR(stage)"
+      env_value = "staging"
+      api_url_value = "https://api-stage.weedar.tech/"
+    when "prod"
+      scheme_name = "WeedAR(prod)"
+      env_value = "production"
+      api_url_value = "https://api.weedar.tech/"
+    else
+      UI.user_error!("You must specify a valid environment with env:dev, env:stage, or env:prod")
+    end
+    
+    original_env_value = sh("grep ENV= ../../.env | cut -d '=' -f2").strip
+    original_api_url_value = sh("grep API_URL= ../../.env | cut -d '=' -f2").strip
+
+    update_env_file(envkey: "ENV", env_value: env_value)
+    update_env_file(envkey: "API_URL", env_value: api_url_value)
+
+    current_build_number = get_build_number(xcodeproj: "WeedAR.xcodeproj") 
+    latest_build_number = app_store_build_number(
+    live: false,
+    app_identifier: ENV["BUNDLE_IDENTIFIER"],
+    )
+    increment_build_number(xcodeproj: "WeedAR.xcodeproj", build_number: latest_build_number.to_i + 1)
+    
+    begin
+      gym(scheme: scheme_name, export_method: 'app-store')
+    rescue => exception
+      update_env_file(envkey: "ENV", env_value: original_env_value)
+      update_env_file(envkey: "API_URL", env_value: original_api_url_value)
+
+      increment_build_number(xcodeproj: "WeedAR.xcodeproj", build_number: current_build_number)
+    end
+
+    current_branch = sh("git rev-parse --abbrev-ref HEAD")
+    author_email = sh("git log -1 --pretty=format:'%ae'")
+
+    current_branch = sh("git rev-parse --abbrev-ref HEAD")
+    author_email = sh("git log -1 --pretty=format:'%ae'")
+
+    pilot(
+      changelog: "Author: #{author_email}\nGitBranch: #{current_branch}\nEnvironment: #{env_value}",
+      skip_submission: true
+    )
+     update_env_file(envkey: "ENV", env_value: original_env_value)
+     update_env_file(envkey: "API_URL", env_value: original_api_url_value)
+
+    increment_build_number(xcodeproj: "WeedAR.xcodeproj", build_number: current_build_number)
+
+    sh("rm -f ../weedar.app.dSYM.zip")
+
+    slack(
+          message: "IOS App successfully uploaded to TestFlight. :white_check_mark:",
+          success: true,
+          slack_url: "https://hooks.slack.com/services/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",
+          default_payloads: [:git_branch, :git_author],
+          attachment_properties: {
+            fields: [
+              {
+                title: "Build Version",
+                value: "#{get_version_number(xcodeproj: "./Weedar.xcodeproj")}"
+              },
+              { 
+                title: "Environment",
+                value: "#{env_value}"
+              }
+            ]
+          }
+      )
+  end
+
+  desc "Distribute build to Firebase App Distribution"
+  lane :firebase_upload do |options|
+    environment = options[:env]
+    scheme_name = ""
+    env_value = ""
+    api_url_value = ""
+
+    case environment
+    when "dev"
+      scheme_name = "WeedAR(dev)"
+      env_value = "development"
+      api_url_value = "https://api-dev.weedar.tech/"
+    when "stage"
+      scheme_name = "WeedAR(stage)"
+      env_value = "staging"
+      api_url_value = "https://api-stage.weedar.tech/"
+    when "prod"
+      scheme_name = "WeedAR(prod)"
+      env_value = "production"
+      api_url_value = "https://api.weedar.tech/"
+    else
+      UI.user_error!("You must specify a valid environment with env:dev, env:stage, or env:prod")
+    end
+
+    original_env_value = sh("grep ENV= ../../.env | cut -d '=' -f2").strip
+    original_api_url_value = sh("grep API_URL= ../../.env | cut -d '=' -f2").strip
+    update_env_file(envkey: "ENV", env_value: env_value)
+    update_env_file(envkey: "API_URL", env_value: api_url_value)
+    current_build_number = get_build_number(xcodeproj: "WeedAR.xcodeproj") 
+    random_build_number = rand(1000..9999).to_s
+    increment_build_number(xcodeproj: "WeedAR.xcodeproj", build_number: random_build_number)
+    
+    begin
+      gym(scheme: scheme_name, export_method: 'ad-hoc')
+    rescue => exception
+      update_env_file(envkey: "ENV", env_value: original_env_value)
+      update_env_file(envkey: "API_URL", env_value: original_api_url_value)
+      increment_build_number(xcodeproj: "WeedAR.xcodeproj", build_number: current_build_number)
+    end
+
+    current_branch = sh("git rev-parse --abbrev-ref HEAD")
+    author_email = sh("git log -1 --pretty=format:'%ae'")
+    firebase_app_distribution(
+      app: "1:1055278210758:ios:6b9a1a2007605d896841c7",
+      groups: "IOSTestGroup",
+      release_notes: "Author: #{author_email}\nGitBranch: #{current_branch}\nEnvironment: #{env_value}",
+      firebase_cli_token: ENV["FIREBASE_CLI_TOKEN"]
+    )
+
+     update_env_file(envkey: "ENV", env_value: original_env_value)
+     update_env_file(envkey: "API_URL", env_value: original_api_url_value)
+
+    increment_build_number(xcodeproj: "WeedAR.xcodeproj", build_number: current_build_number)
+
+    sh("rm -f ../weedar.app.dSYM.zip")
+
+    slack(
+          message: "IOS App successfully uploaded to Firebase. :white_check_mark:",
+          success: true,
+          slack_url: "https://hooks.slack.com/services/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",
+          default_payloads: [:git_branch, :git_author],
+          attachment_properties: {
+            fields: [
+              {
+                title: "Build Version",
+                value: "#{get_version_number(xcodeproj: "./Weedar.xcodeproj")}"
+              },
+              { 
+                title: "Environment",
+                value: "#{env_value}"
+              }
+            ]
+          }
+      )
+  end
+
+  private_lane :update_env_file do |options|
+    env_file = File.join(Dir.pwd, '..', '..', '.env')
+    if File.read(env_file).include?("#{options[:envkey]}=")
+      sh(%Q[sed -i "" -e "s|^#{options[:envkey]}=.*|#{options[:envkey]}=#{options[:env_value]}|" "#{env_file}"])
+    else
+      sh("echo #{options[:envkey]}=#{options[:env_value]} >> \"#{env_file}\"")
+    end
+  end
+end

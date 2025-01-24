@@ -1,0 +1,29 @@
+<svg width="251" height="182" viewBox="0 0 251 182" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_12372_69983)">
+<rect width="251" height="182" rx="30" fill="url(#paint0_radial_12372_69983)"/>
+<g opacity="0.8" filter="url(#filter0_f_12372_69983)">
+<circle cx="313.5" cy="184.5" r="73.5" fill="black" fill-opacity="0.5"/>
+</g>
+
+</g>
+<rect x="0.25" y="0.25" width="250.5" height="181.5" rx="29.75" stroke="url(#paint1_linear_12372_69983)" stroke-width="0.5"/>
+<defs>
+<filter id="filter0_f_12372_69983" x="160" y="31" width="307" height="307" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feGaussianBlur stdDeviation="40" result="effect1_foregroundBlur_12372_69983"/>
+</filter>
+
+<radialGradient id="paint0_radial_12372_69983" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(126.806 91.9466) rotate(-0.19103) scale(283.922 205.874)">
+<stop stop-color="#292929"/>
+<stop offset="1"/>
+</radialGradient>
+<linearGradient id="paint1_linear_12372_69983" x1="7.53921" y1="11.9883" x2="252.446" y2="166.735" gradientUnits="userSpaceOnUse">
+<stop stop-color="white"/>
+<stop offset="1" stop-color="white" stop-opacity="0.13"/>
+</linearGradient>
+<clipPath id="clip0_12372_69983">
+<rect width="251" height="182" rx="30" fill="white"/>
+</clipPath>
+</defs>
+</svg>

@@ -1,0 +1,53 @@
+diff --git a/node_modules/@babylonjs/react-native-iosandroid-0-71/android/build.gradle b/node_modules/@babylonjs/react-native-iosandroid-0-71/android/build.gradle
+index 112dba9..04f7e2b 100644
+--- a/node_modules/@babylonjs/react-native-iosandroid-0-71/android/build.gradle
++++ b/node_modules/@babylonjs/react-native-iosandroid-0-71/android/build.gradle
+@@ -42,7 +42,48 @@ buildscript {
+ 
+ apply plugin: 'com.android.library'
+ 
++def resolveBuildType() {
++    Gradle gradle = getGradle()
++    String tskReqStr = gradle.getStartParameter().getTaskRequests()['args'].toString()
++    
++    return tskReqStr.contains('Release') ? 'release' : 'debug'
++}
++
+ android {
++    packagingOptions {
++        doNotStrip resolveBuildType() == 'debug' ? "**/**/*.so" : ''
++        excludes = [
++                "META-INF",
++                "META-INF/**",
++                "**/libc++_shared.so",
++                "**/libfbjni.so",
++                "**/libjsi.so",
++                "**/libfolly_json.so",
++                "**/libfolly_runtime.so",
++                "**/libglog.so",
++               "**/libhermes.so",
++                "**/libhermes-executor-debug.so",
++                "**/libhermes_executor.so",
++                "**/libreactnativejni.so",
++                "**/libturbomodulejsijni.so",
++                "**/libreact_nativemodule_core.so",
++                "**/libjscexecutor.so",
++                "**/libv8executor.so",
++                "**/libfabricjni.so",
++                "**/libreact_codegen_rncore.so",
++                "**/libreact_debug.so",
++                "**/libreact_newarchdefaults.so",
++                "**/libreact_render_componentregistry.so",
++                "**/libreact_render_core.so",
++               "**/libreact_render_debug.so",
++                "**/libreact_render_graphics.so",
++               "**/libreact_render_imagemanager.so",
++                "**/libreact_render_mapbuffer.so",
++                "**/librrc_image.so",
++                "**/librrc_view.so",
++                "**/libyoga.so",
++        ]
++    }
+     compileSdkVersion safeExtGet('compileSdkVersion', DEFAULT_COMPILE_SDK_VERSION)
+     buildToolsVersion safeExtGet('buildToolsVersion', DEFAULT_BUILD_TOOLS_VERSION)
+     defaultConfig {
